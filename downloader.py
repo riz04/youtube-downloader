@@ -2,8 +2,13 @@ import sys
 
 from pytube import YouTube
 
-videoUrl = sys.argv[1]
+# check if user has given url
+try : 
+    videoUrl = sys.argv[1]
+    YouTube(videoUrl).streams.first().download()
 
-print(videoUrl)
+except: 
+    videoUrl = input("Provide URL :")
+    print(videoUrl)
 
-YouTube(videoUrl).streams.first().download()
+    YouTube(videoUrl).streams.first().download()
