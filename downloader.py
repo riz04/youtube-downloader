@@ -1,8 +1,9 @@
+import sys
+
 from pytube import YouTube
 
-videoUrl = input("enter video link : ")
+videoUrl = sys.argv[1]
 
 print(videoUrl)
 
 YouTube(videoUrl).streams.first().download()
-
